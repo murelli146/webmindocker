@@ -1,6 +1,7 @@
 FROM alpine:latest
 MAINTAINER Gernot Klobucaric <murelli146>
-ARG	webmin_version=1.962
+#ARG	webmin_version=1.962
+ARG	webmin_version=1.973
 COPY root / 
 RUN apk update && \
 	apk add --no-cache ca-certificates openssl perl perl-net-ssleay expect && \
@@ -13,6 +14,8 @@ RUN mv /etc/webmindocker/setup.exp /etc/webmindocker/webmin/setup.exp && \
 	/usr/bin/expect ./setup.exp && \
 	rm setup.exp && \
 	apk del expect && \
+#	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/cron.wbm.gz && \
+#	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/webmincron.wbm.gz && \
 	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/sshd.wbm.gz && \
 	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/mailboxes.wbm.gz && \
 	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/mount.wbm.gz && \
