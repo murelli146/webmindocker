@@ -14,8 +14,8 @@ RUN mv /etc/webmindocker/setup.exp /etc/webmindocker/webmin/setup.exp && \
 	/usr/bin/expect ./setup.exp && \
 	rm setup.exp && \
 	apk del expect && \
-#	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/cron.wbm.gz && \
-#	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/webmincron.wbm.gz && \
+	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/cron.wbm.gz && \
+	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/webmincron.wbm.gz && \
 	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/sshd.wbm.gz && \
 	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/mailboxes.wbm.gz && \
 	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/mount.wbm.gz && \
