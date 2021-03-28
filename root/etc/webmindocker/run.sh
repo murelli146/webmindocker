@@ -10,7 +10,11 @@
 
 #Cron
 sh /docker-entry.sh
+echo "Start cron"
 sh /docker-cmd.sh tail &
+echo "Start webmin"
 #webmin
+echo "Start sshd"
 /usr/sbin/sshd
-/etc/webmin/start --nofork &
+echo "Start webmin"
+/etc/webmin/start --nofork

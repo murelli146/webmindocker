@@ -40,7 +40,7 @@ RUN ssh-keygen -t rsa -b 4096 -f  /etc/ssh/ssh_host_key
 RUN apk update && apk add dcron curl wget rsync ca-certificates && rm -rf /var/cache/apk/*
 RUN mkdir -p /var/log/cron && mkdir -m 0644 -p /var/spool/cron/crontabs && touch /var/log/cron/cron.log && mkdir -m 0644 -p /etc/cron.d
 
-VOLUME	["/etc/webmin" , "/var/webmin"]
+VOLUME	["/etc/webmin" , "/var/webmin" , "/var/spool/cron/crontabs"]
 EXPOSE 22
 EXPOSE 10000
 CMD ["/etc/webmindocker/run.sh"]
