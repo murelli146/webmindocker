@@ -12,3 +12,4 @@
 /etc/webmin/start --nofork
 #Cron
 sh /docker-entry.sh
+sh /docker-cmd.sh
