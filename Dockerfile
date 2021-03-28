@@ -35,6 +35,11 @@ RUN sed -ir 's/#HostKey \/etc\/ssh\/ssh_host_ecdsa_key/HostKey \/etc\/ssh\/ssh_h
 RUN sed -ir 's/#HostKey \/etc\/ssh\/ssh_host_ed25519_key/HostKey \/etc\/ssh\/ssh_host_ed25519_key/g' /etc/ssh/sshd_config
 RUN /usr/bin/ssh-keygen -A
 RUN ssh-keygen -t rsa -b 4096 -f  /etc/ssh/ssh_host_key
+
+#Cron:
+RUN apk update && apk add dcron curl wget rsync ca-certificates && rm -rf /var/cache/apk/*
+RUN mkdir -p /var/log/cron && mkdir -m 0644 -p /var/spool/cron/crontabs && touch /var/log/cron/cron.log && mkdir -m 0644 -p /etc/cron.d
+
 VOLUME	["/etc/webmin" , "/var/webmin"]
 EXPOSE 22
 EXPOSE 10000

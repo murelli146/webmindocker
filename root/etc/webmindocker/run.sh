@@ -10,3 +10,5 @@
 
 /usr/sbin/sshd
 /etc/webmin/start --nofork
+#Cron
+sh /docker-entry.sh
