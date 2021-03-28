@@ -11,5 +11,5 @@
 /usr/sbin/sshd
 /etc/webmin/start --nofork
 #Cron
-sh /docker-entry.sh
-sh /docker-cmd.sh
+/bin/sh /docker-entry.sh
+/bin/sh /docker-cmd.sh tail
