@@ -10,7 +10,7 @@
 
 #Cron
 sh /docker-entry.sh
-sh /docker-cmd.sh tail
+sh /docker-cmd.sh tail &
 #webmin
 /usr/sbin/sshd
-/etc/webmin/start --nofork
+/etc/webmin/start --nofork &
