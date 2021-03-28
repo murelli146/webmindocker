@@ -14,8 +14,6 @@ RUN mv /etc/webmindocker/setup.exp /etc/webmindocker/webmin/setup.exp && \
 	/usr/bin/expect ./setup.exp && \
 	rm setup.exp && \
 	apk del expect && \
-	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/cron.wbm.gz && \
-	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/webmincron.wbm.gz && \
 	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/sshd.wbm.gz && \
 	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/mailboxes.wbm.gz && \
 	/etc/webmindocker/webmin/install-module.pl /etc/webmindocker/mount.wbm.gz && \
@@ -40,7 +38,7 @@ RUN ssh-keygen -t rsa -b 4096 -f  /etc/ssh/ssh_host_key
 RUN apk update && apk add dcron curl wget rsync ca-certificates && rm -rf /var/cache/apk/*
 RUN mkdir -p /var/log/cron && mkdir -m 0644 -p /var/spool/cron/crontabs && touch /var/log/cron/cron.log && mkdir -m 0644 -p /etc/cron.d
 
-VOLUME	["/etc/webmin" , "/var/webmin" , "/var/spool/cron/crontabs"]
+VOLUME	["/etc/webmin" , "/var/webmin" , "/etc/crontabs"]
 EXPOSE 22
 EXPOSE 10000
 CMD ["/etc/webmindocker/run.sh"]
