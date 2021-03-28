@@ -8,8 +8,9 @@
 #		Member		: murelli146                        #
 #########################################################
 
-/usr/sbin/sshd
-/etc/webmin/start --nofork
 #Cron
 /bin/sh /docker-entry.sh
 /bin/sh /docker-cmd.sh tail
+#webmin
+/usr/sbin/sshd
+/etc/webmin/start --nofork
