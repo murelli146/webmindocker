@@ -9,8 +9,8 @@
 #########################################################
 
 #Cron
-/bin/sh /docker-entry.sh
-/bin/sh /docker-cmd.sh tail
+sh /docker-entry.sh
+sh /docker-cmd.sh tail
 #webmin
 /usr/sbin/sshd
 /etc/webmin/start --nofork
