@@ -9,4 +9,6 @@ rm -rf /var/spool/cron/crontabs && mkdir -m 0644 -p /var/spool/cron/crontabs
 
 chmod -R 0644 /var/spool/cron/crontabs
 
+ln -s /etc/crontabs/root /var/spool/cron/crontabs/root
+
 exec "$@"
